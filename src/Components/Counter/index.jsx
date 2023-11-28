@@ -3,14 +3,9 @@ import useLocalStorage from '../../hook/useLocalStorage'
 import "./index.scss"
 
 function Counter() {
-    const [theme, setTheme] = useLocalStorage("theme",true)
     const [input1, setInput1] = useState(0)
     const [input2, setInput2] = useState(0)
     const [res, setRes] = useState("")
-
-    function changeTheme() {
-        document.body.classList.toggle("dark-mode")
-    }
 
     function add() {
         console.log(+input1,+input2);
@@ -36,7 +31,6 @@ function Counter() {
         {/* <div><span onClick={inc}>Counter :</span> <span onClick={dec}>{count}</span></div> */}
         {/* <input type="text" onInput={(x)=>setLocal(x.target.value)} value={local}/> */}
         <h1>calculator</h1>
-        <button onClick={changeTheme}>aaa</button>
         <input type="text" onInput={e=>setInput1(e.target.value)}/>
         <input type="text" onInput={e=>setInput2(e.target.value)}/>
         <button onClick={add}>+</button>
